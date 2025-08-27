@@ -1,0 +1,41 @@
+class Solution {
+    public static boolean sdn(int n)
+    {
+       int x=n;
+       int c=iscount(n);
+       int c1=0;
+       while(n>0)
+       {
+           int r=n%10;
+           if(r!=0&&x%r==0)
+           {
+            c1++;
+           }
+           n=n/10;
+       }
+       if(c1==c) return true;
+       else return false;
+    }
+    public static int iscount(int l)
+    {
+        int k=0;
+        while(l>0)
+        {
+            k++;
+            l=l/10;
+        }
+        return k;
+    }
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> li=new ArrayList<>();
+        for(int i=left;i<=right;i++)
+        {
+            if(sdn(i))
+            {
+              li.add(i);
+            }
+        }
+        return li;
+        
+    }
+}
