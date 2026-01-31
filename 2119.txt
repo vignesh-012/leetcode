@@ -1,0 +1,24 @@
+class Solution {
+    public boolean isSameAfterReversals(int num) {
+        int k=num;
+        int n=0,n1=0;
+        if(num==0) return true;
+        else{
+            while(num>0)
+            {
+                int rem=num%10;
+                n=n*10+rem;
+                num/=10;
+            }
+            while(n>0)
+            {
+                int rem=n%10;
+                n1=n1*10+rem;
+                n/=10;
+            }
+            if(n1==k) return true;
+            else return false;
+        }
+        
+    }
+}
