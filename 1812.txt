@@ -1,0 +1,17 @@
+class Solution {
+    public boolean squareIsWhite(String s) {
+        char c1=s.charAt(0);
+        int a=s.charAt(1)-0;
+        if((c1=='b'||c1=='d'||c1=='f'||c1=='h')&&(a%2==1))
+        {
+           return true;
+        }
+        else if((c1=='a'||c1=='c'||c1=='e'||c1=='g')&&(a%2==0))
+        {
+            return true;
+        }
+        else return false;
+        
+        
+    }
+}
