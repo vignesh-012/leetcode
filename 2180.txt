@@ -1,0 +1,25 @@
+class Solution {
+    public static boolean sod(int n)
+    { int s=0;
+        while(n>0)
+        {
+          int r=n%10;
+          s=s+r;
+          n/=10;
+        }
+        if(s%2==0) return true;
+        else return false;
+    }
+    public int countEven(int num) {
+        int c=0;
+        for(int i=1;i<=num;i++)
+        {
+            if(sod(i))
+            {
+                c++;
+            }
+        }
+        return c;
+        
+    }
+}
