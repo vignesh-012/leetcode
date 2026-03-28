@@ -1,0 +1,26 @@
+class Solution {
+    public int maxFreqSum(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        char[] ar = s.toCharArray();
+
+        for (char ch : ar) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        int vo = 0;
+        int co = 0;
+
+        for (char ch : ar) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                if (map.containsKey(ch)) {
+                    vo = Math.max(vo, map.get(ch));
+                }
+            } else {
+                if (map.containsKey(ch)) {
+                    co = Math.max(co, map.get(ch));
+                }
+            }
+        }
+        return vo + co;
+    }
+}
