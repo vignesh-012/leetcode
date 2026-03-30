@@ -1,0 +1,6 @@
+class Solution {
+    public boolean checkPowersOfThree(int n) {
+        String lk=Integer.toString(n,3);
+        return !lk.contains("2");
+    }
+}
